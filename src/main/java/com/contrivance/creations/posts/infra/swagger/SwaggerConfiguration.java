@@ -1,4 +1,4 @@
-package com.charles.overstack.posts.infra.swagger;
+package com.contrivance.creations.posts.infra.swagger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

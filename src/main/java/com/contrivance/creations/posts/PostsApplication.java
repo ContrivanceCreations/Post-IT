@@ -1,4 +1,4 @@
-package com.charles.overstack.posts;
+package com.contrivance.creations.posts;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

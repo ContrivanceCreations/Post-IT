@@ -1,9 +1,9 @@
-package com.charles.overstack.posts.domain.services;
+package com.contrivance.creations.posts.domain.services;
 
 import java.util.Optional;
 import java.util.UUID;
-import com.charles.overstack.posts.domain.models.Post;
-import com.charles.overstack.posts.domain.repositories.PostRepository;
+import com.contrivance.creations.posts.domain.models.Post;
+import com.contrivance.creations.posts.domain.repositories.PostRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;

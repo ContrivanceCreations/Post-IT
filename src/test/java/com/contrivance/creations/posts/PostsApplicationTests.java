@@ -1,4 +1,4 @@
-package com.charles.overstack.posts;
+package com.contrivance.creations.posts;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

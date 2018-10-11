@@ -1,7 +1,7 @@
-package com.charles.overstack.posts.domain.controllers;
+package com.contrivance.creations.posts.domain.controllers;
 
-import com.charles.overstack.posts.domain.models.Post;
-import com.charles.overstack.posts.domain.services.PostService;
+import com.contrivance.creations.posts.domain.models.Post;
+import com.contrivance.creations.posts.domain.services.PostService;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

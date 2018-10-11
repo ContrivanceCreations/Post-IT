@@ -1,4 +1,4 @@
-package com.charles.overstack.posts.domain.models;
+package com.contrivance.creations.posts.domain.models;
 
 import java.util.Date;
 import org.springframework.data.annotation.Id;
