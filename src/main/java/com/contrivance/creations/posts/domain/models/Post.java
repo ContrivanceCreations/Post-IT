@@ -1,5 +1,6 @@
 package com.contrivance.creations.posts.domain.models;
 
+import java.util.ArrayList;
 import java.util.Date;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -15,6 +16,12 @@ public class Post {
 	private String postBody;
 	@DateTimeFormat(pattern="dd-MM-yyyy")
 	private Date postDate;
+	private ArrayList<String> replies = new ArrayList<String>();
+	private int commentLayer;
+	private int likes;
+	private int dislikes;
+	private ArrayList<String> tags = new ArrayList<String>();
+	private boolean hasReadPost;
 
 	public Post() {}
 
@@ -54,6 +61,54 @@ public class Post {
 
 	public void setPostDate(Date postDate) {
 		this.postDate = postDate;
+	}
+
+	public ArrayList<String> getReplies() {
+		return replies;
+	}
+
+	public void setReplies(ArrayList<String> replies) {
+		this.replies = replies;
+	}
+
+	public int getCommentLayer() {
+		return commentLayer;
+	}
+
+	public void setCommentLayer(int commentLayer) {
+		this.commentLayer = commentLayer;
+	}
+
+	public int getLikes() {
+		return likes;
+	}
+
+	public void setLikes(int likes) {
+		this.likes = likes;
+	}
+
+	public int getDislikes() {
+		return dislikes;
+	}
+
+	public void setDislikes(int dislikes) {
+		this.dislikes = dislikes;
+	}
+
+	public ArrayList<String> getTags() {
+		return tags;
+	}
+
+	public void setTags(ArrayList<String> tags) {
+		this.tags = tags;
+	}
+
+	public boolean isHasReadPost() {
+		return hasReadPost;
+	}
+
+	public void setHasReadPost(boolean hasReadPost) {
+		this.hasReadPost = hasReadPost;
 	}
 
 	@Override
