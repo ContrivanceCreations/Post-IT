@@ -12,11 +12,12 @@ public class Post {
 	@Id
 	private String id;
 
+	// STILL NEEDS USER ID
 	private String title;
 	private String postBody;
 	@DateTimeFormat(pattern="dd-MM-yyyy")
 	private Date postDate;
-	private ArrayList<String> replies = new ArrayList<String>();
+	private ArrayList<String> repliesPostIds = new ArrayList<String>();
 	private int commentLayer;
 	private int likes;
 	private int dislikes;
@@ -25,10 +26,26 @@ public class Post {
 
 	public Post() {}
 
-	public Post(String title, String postBody, Date postDate) {
+	public Post(String id,
+				String title,
+				String postBody,
+				Date postDate,
+				ArrayList<String> repliesPostIds,
+				int commentLayer,
+				int likes,
+				int dislikes,
+				ArrayList<String> tags,
+				boolean hasReadPost) {
+		this.id = id;
 		this.title = title;
 		this.postBody = postBody;
 		this.postDate = postDate;
+		this.repliesPostIds = repliesPostIds;
+		this.commentLayer = commentLayer;
+		this.likes = likes;
+		this.dislikes = dislikes;
+		this.tags = tags;
+		this.hasReadPost = hasReadPost;
 	}
 
 	public String getId() {
@@ -63,12 +80,12 @@ public class Post {
 		this.postDate = postDate;
 	}
 
-	public ArrayList<String> getReplies() {
-		return replies;
+	public ArrayList<String> getRepliesPostIds() {
+		return repliesPostIds;
 	}
 
-	public void setReplies(ArrayList<String> replies) {
-		this.replies = replies;
+	public void setRepliesPostIds(ArrayList<String> repliesPostIds) {
+		this.repliesPostIds = repliesPostIds;
 	}
 
 	public int getCommentLayer() {
@@ -118,7 +135,7 @@ public class Post {
 				", title='" + title + '\'' +
 				", postBody='" + postBody + '\'' +
 				", postDate=" + postDate +
-				", replies=" + replies +
+				", repliesPostIds=" + repliesPostIds +
 				", commentLayer=" + commentLayer +
 				", likes=" + likes +
 				", dislikes=" + dislikes +
