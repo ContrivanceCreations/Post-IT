@@ -2,6 +2,7 @@ package com.contrivance.creations.posts.domain.controllers;
 
 import com.contrivance.creations.posts.domain.models.Post;
 import com.contrivance.creations.posts.domain.services.PostService;
+import com.contrivance.creations.posts.domain.vo.PostRequest;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -36,7 +37,7 @@ public class PostController {
 	}
 
 	@PostMapping
-	public ResponseEntity<Post> newPost(Post post) {
+	public ResponseEntity<Post> newPost(PostRequest post) {
 		return new ResponseEntity<>(this.postService.insertNewPost(post), HttpStatus.CREATED);
 	}
 
@@ -47,7 +48,7 @@ public class PostController {
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<Post> update(@PathVariable("id") String id, Post post) {
+	public ResponseEntity<Post> update(@PathVariable("id") String id, PostRequest post) {
 		return new ResponseEntity<>(this.postService.updatePost(id, post), HttpStatus.OK);
 	}
 

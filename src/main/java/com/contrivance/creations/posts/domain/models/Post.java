@@ -2,6 +2,9 @@ package com.contrivance.creations.posts.domain.models;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -14,14 +17,15 @@ public class Post {
 
 	// STILL NEEDS USER ID
 	private String title;
+	// MIGHT NEED TO CHANGE THIS TO A BSON OBJECT
 	private String postBody;
 	@DateTimeFormat(pattern="dd-MM-yyyy")
 	private Date postDate;
-	private ArrayList<String> repliesPostIds = new ArrayList<String>();
+	private ArrayList<String> repliesPostIds = new ArrayList<>();
 	private int commentLayer;
 	private int likes;
 	private int dislikes;
-	private ArrayList<String> tags = new ArrayList<String>();
+	private Set<String> tags = new HashSet<>();
 	private boolean hasReadPost;
 
 	public Post() {}
@@ -34,7 +38,7 @@ public class Post {
 				int commentLayer,
 				int likes,
 				int dislikes,
-				ArrayList<String> tags,
+				Set<String> tags,
 				boolean hasReadPost) {
 		this.id = id;
 		this.title = title;
@@ -112,11 +116,11 @@ public class Post {
 		this.dislikes = dislikes;
 	}
 
-	public ArrayList<String> getTags() {
+	public Set<String> getTags() {
 		return tags;
 	}
 
-	public void setTags(ArrayList<String> tags) {
+	public void setTags(Set<String> tags) {
 		this.tags = tags;
 	}
 
