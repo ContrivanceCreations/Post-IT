@@ -4,6 +4,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 public class PostRequest {
 
@@ -14,11 +16,11 @@ public class PostRequest {
     private String postBody;
     @DateTimeFormat(pattern="dd-MM-yyyy")
     private Date postDate;
-    private ArrayList<String> repliesPostIds = new ArrayList<String>();
+    private ArrayList<String> repliesPostIds = new ArrayList<>();
     private int commentLayer;
     private int likes;
     private int dislikes;
-    private ArrayList<String> tags = new ArrayList<String>();
+    private Set<String> tags = new HashSet<>();
     private boolean hasReadPost;
 
     public String getId() {
@@ -85,15 +87,15 @@ public class PostRequest {
         this.dislikes = dislikes;
     }
 
-    public ArrayList<String> getTags() {
+    public Set<String> getTags() {
         return tags;
     }
 
-    public void setTags(ArrayList<String> tags) {
+    public void setTags(Set<String> tags) {
         this.tags = tags;
     }
 
-    public boolean isHasReadPost() {
+    public boolean getHasReadPost() {
         return hasReadPost;
     }
 

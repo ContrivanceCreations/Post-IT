@@ -24,12 +24,18 @@ public class PostService {
 		newpost.setTitle(post.getTitle());
 		newpost.setPostBody(post.getPostBody());
 		newpost.setPostDate(post.getPostDate());
-		// add more
+		newpost.setRepliesPostIds(post.getRepliesPostIds());
+		newpost.setCommentLayer(post.getCommentLayer());
+		newpost.setLikes(post.getLikes());
+		newpost.setDislikes(post.getDislikes());
+		newpost.setTags(post.getTags());
+		newpost.setHasReadPost(post.getHasReadPost());
+
 		return this.postRepository.save(newpost);
 	}
 
 	public Post updatePost(String id, PostRequest post) {
-		Optional<Post> postOptional = postRepository.findById(id);
+		Optional<Post> postOptional = this.postRepository.findById(id);
 
 		if(!postOptional.isPresent()) {
 			throw new RuntimeException("Post not found");
@@ -39,20 +45,24 @@ public class PostService {
 		updatedpost.setTitle(post.getTitle());
 		updatedpost.setPostBody(post.getPostBody());
 		updatedpost.setPostDate(post.getPostDate());
-
-		// add more
+		updatedpost.setRepliesPostIds(post.getRepliesPostIds());
+		updatedpost.setCommentLayer(post.getCommentLayer());
+		updatedpost.setLikes(post.getLikes());
+		updatedpost.setDislikes(post.getDislikes());
+		updatedpost.setTags(post.getTags());
+		updatedpost.setHasReadPost(post.getHasReadPost());
 
 		return this.postRepository.save(updatedpost);
 	}
 
 	public Page<Post> getAllPosts(int page) {
 		Page<Post> postsPage;
-		postsPage = postRepository.findAll(PageRequest.of(page, 10));
+		postsPage = this.postRepository.findAll(PageRequest.of(page, 10));
 		return postsPage;
 	}
 
 	public Post findPostById(String id) {
-		Optional<Post> postOptional = postRepository.findById(id);
+		Optional<Post> postOptional = this.postRepository.findById(id);
 
 		if(!postOptional.isPresent()) {
 			throw new RuntimeException("Post not found");
@@ -67,6 +77,6 @@ public class PostService {
 	//	}
 
 	public void deletePost(String id) {
-		postRepository.deleteById(id);
+		this.postRepository.deleteById(id);
 	}
 }
