@@ -118,6 +118,12 @@ public class Post {
 				", title='" + title + '\'' +
 				", postBody='" + postBody + '\'' +
 				", postDate=" + postDate +
+				", replies=" + replies +
+				", commentLayer=" + commentLayer +
+				", likes=" + likes +
+				", dislikes=" + dislikes +
+				", tags=" + tags +
+				", hasReadPost=" + hasReadPost +
 				'}';
 	}
 }
